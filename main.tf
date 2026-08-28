@@ -50,3 +50,7 @@ output "tags" {
 output "vm_IDs" {
   value = [for vm in azurerm_virtual_machine.main : vm.id]
 }
+
+output "vm_name_uppercase" {
+  value = [for vm in azurerm_virtual_machine.main : upper(vm.name)]
+}
